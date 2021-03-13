@@ -1,0 +1,25 @@
+{
+  "name": "hrouter",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo skip",
+    "build": "tsup src/index.ts --format cjs,esm --dts && cp src/index.ts mod.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@egoist/prettier-config": "^0.1.0",
+    "prettier": "^2.2.1",
+    "tsup": "^4.6.1",
+    "typescript": "^4.2.3"
+  }
+}
