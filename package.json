@@ -2,7 +2,8 @@
   "name": "@egoist/router",
   "version": "0.0.0",
   "files": [
-    "dist"
+    "dist",
+    "/mod.ts"
   ],
   "publishConfig": {
     "access": "public"
