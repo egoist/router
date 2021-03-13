@@ -1,4 +1,4 @@
-# hrouter
+# @egoist/router
 
 A router that works in Node.js, browser and Deno.
 
@@ -7,17 +7,17 @@ A router that works in Node.js, browser and Deno.
 For Node.js:
 
 ```bash
-npm i hrouter
+npm i @egoist/router
 ```
 
 ```ts
-import { Router } from 'hrouter'
+import { Router } from '@egoist/router'
 ```
 
 For Deno:
 
 ```ts
-import { Router } from 'https://unpkg.com/hrouter/mod.ts'
+import { Router } from 'https://unpkg.com/@egoist/router/mod.ts'
 ```
 
 ## Usage
