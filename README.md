@@ -43,19 +43,12 @@ for (const handler of handlers) {
 
 ## Supported route pattern
 
-- Static (`/foo`, `/foo/bar`)
-- Parameter (`/:title`, `/books/:title`, `/books/:genre/:title`)
-- Parameter w/ Suffix (`/movies/:title.mp4`, `/movies/:title.(mp4|mov)`)
-- Optional Parameters (`/:title?`, `/books/:title?`, `/books/:genre/:title?`)
-- Wildcards (`*`, `/books/*`, `/books/:genre/*`)
+All patterns that [Vue Router](https://next.router.vuejs.org/guide/essentials/route-matching-syntax.html) supports:
 
-## TODO
-
-- [ ] Ranking system for routes, so you can add routes in random order.
-
-## Credits
-
-This is a fork of [trouter](https://github.com/lukeed/trouter), all credit goes to [@lukeed](https://github.com/lukeed).
+- `/user/:user`: Parameter
+- `/:orderId(\\d+)`: Custom regexp
+- `/:chapters+`: Repeatable params
+- Consult the Vue Router docs for more..
 
 ## License
 
