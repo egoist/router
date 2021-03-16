@@ -1,8 +1,5 @@
-import {
-  createParser,
-  PathParser,
-  comparePathParserScore,
-} from '@egoist/path-parser'
+import { createParser, comparePathParserScore } from '@egoist/path-parser'
+import type { PathParser } from '@egoist/path-parser'
 
 export type HTTPMethod =
   | 'ACL'

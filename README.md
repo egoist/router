@@ -17,7 +17,7 @@ import { Router } from '@egoist/router'
 For Deno:
 
 ```ts
-import { Router } from 'https://unpkg.com/@egoist/router/mod.ts'
+import { Router } from 'https://unpkg.com/@egoist/router/mod.js'
 ```
 
 ## Usage
