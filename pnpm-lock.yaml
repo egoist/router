@@ -5,7 +5,7 @@ devDependencies:
   '@types/jest': 26.0.20
   jest: 26.6.3
   prettier: 2.2.1
-  tsup: 4.8.2_typescript@4.2.3
+  tsup: 4.8.7_typescript@4.2.3
   typescript: 4.2.3
 lockfileVersion: 5.2
 packages:
@@ -3957,7 +3957,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
-  /tsup/4.8.2_typescript@4.2.3:
+  /tsup/4.8.7_typescript@4.2.3:
     dependencies:
       cac: 6.7.2
       chalk: 4.1.0
@@ -3979,7 +3979,7 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-KzDlG4VAcBAovhz1R1CYdzViJ1iVIkWqF1j2wi6WZgHwkSTy5gjV2CHtbEsCw2TDZOp1LmUQtXqLw+kXDD4GtQ==
+      integrity: sha512-XroAsFr3XT5Nm+LsFU/k6hzoD4bPcVWOmJGboc95WcT+8ppzXZeCm7VCRusWny6qgLvpLH9RWL21f/eMJlvEHw==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -4287,5 +4287,5 @@ specifiers:
   '@types/jest': ^26.0.20
   jest: ^26.6.3
   prettier: ^2.2.1
-  tsup: ^4.8.2
+  tsup: ^4.8.7
   typescript: ^4.2.3
