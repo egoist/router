@@ -43,10 +43,23 @@ export interface Route<THandler> {
   handlers: THandler[]
 }
 
+export { createParser, comparePathParserScore }
+
+const normalizeRoutePath = (path: string) => {
+  if (path[0] !== '/') path = '/' + path
+  path = path.replace('/*', '/:wild(.*)')
+  return path
+}
+
+export type Options = {
+  /** Sort routes by specificity */
+  sortRoutes?: boolean
+}
+
 export class Router<THandler = any> {
   routes: Route<THandler>[]
 
-  constructor() {
+  constructor(private opts: Options = {}) {
     this.routes = []
   }
 
@@ -61,21 +74,22 @@ export class Router<THandler = any> {
   post = this.add.bind(this, 'POST')
   put = this.add.bind(this, 'PUT')
 
-  use(route: string, ...handlers: THandler[]) {
-    const parser = createParser(route)
+  use(path: string, ...handlers: THandler[]) {
+    const parser = createParser(normalizeRoutePath(path))
     this.routes.push({ parser, method: '', handlers })
     this.sortRoutes()
     return this
   }
 
-  add(method: HTTPMethod | '', route: string, ...handlers: THandler[]) {
-    const parser = createParser(route)
+  add(method: HTTPMethod | '', path: string, ...handlers: THandler[]) {
+    const parser = createParser(normalizeRoutePath(path))
     this.routes.push({ parser, method, handlers })
     this.sortRoutes()
     return this
   }
 
   sortRoutes() {
+    if (!this.opts.sortRoutes) return
     this.routes = this.routes.sort((a, b) =>
       comparePathParserScore(a.parser, b.parser),
     )
