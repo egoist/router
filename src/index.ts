@@ -46,9 +46,7 @@ export interface Route<THandler> {
 export { createParser, comparePathParserScore }
 
 const normalizeRoutePath = (path: string) => {
-  if (path[0] !== '/') path = '/' + path
-  path = path.replace('/*', '/:wild(.*)')
-  return path
+  return path.replace('/*', '/:wild(.*)')
 }
 
 export type Options = {
