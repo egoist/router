@@ -93,11 +93,19 @@ export class Router<THandler = any> {
     )
   }
 
-  find(method: HTTPMethod, url: string) {
+  find(
+    method: HTTPMethod,
+    url: string,
+    { exitOnFirstMatch }: { exitOnFirstMatch?: boolean } = {},
+  ) {
     const isHEAD = method === 'HEAD'
     const arr = this.routes
-    let params: Record<string, string | string[]> = {},
-      handlers: THandler[] = []
+
+    const routes: {
+      handler: THandler
+      params: Record<string, string | string[]>
+    }[] = []
+
     for (let i = 0; i < arr.length; i++) {
       const tmp = arr[i]
       if (
@@ -107,13 +115,16 @@ export class Router<THandler = any> {
       ) {
         const match = tmp.parser.parse(url)
         if (match) {
-          params = match
-          handlers = tmp.handlers
-          break
+          for (const handler of tmp.handlers) {
+            routes.push({ params: match, handler })
+          }
+          if (exitOnFirstMatch) {
+            break
+          }
         }
       }
     }
 
-    return { params, handlers }
+    return routes
   }
 }

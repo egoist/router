@@ -1,6 +1,6 @@
 # @egoist/router
 
-A router that works in Node.js, browser and Deno.
+An Express-like router that works in Node.js, browser and Deno.
 
 ## Install
 
@@ -33,10 +33,10 @@ router.get('/', () => {
   // do something
 })
 
-const { params, handlers } = router.find('GET', '/user/egoist')
+const matches = router.find('GET', '/user/egoist')
 
-for (const handler of handlers) {
-  handler(params)
+for (const m of matches) {
+  m.handler(m.params)
 }
 // prints: 'egoist'
 ```
